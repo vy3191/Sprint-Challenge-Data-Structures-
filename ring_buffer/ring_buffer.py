@@ -16,5 +16,6 @@ class RingBuffer:
     def get(self):
         item_list = []
         for item in self.storage:
-            item_list.append(item)
+            if item != None:
+                item_list.append(item)
         return item_list    

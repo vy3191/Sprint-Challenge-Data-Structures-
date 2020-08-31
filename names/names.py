@@ -1,4 +1,5 @@
 import time
+from bst import BST
 
 start_time = time.time()
 
@@ -23,19 +24,25 @@ duplicates = []  # Return the list of duplicates in this data structure
 # duplicates = [name for name in names_1 if name in names_2]
 
 
-#Try 2 ---> 0.0059828 seconds in my machine
+#Try 2 ---> 1.4940505027770996 seconds
 
 #1)Loop trough the name_1 list  
 # 2)store the names in the dictionary as keys 
 # 3) loop through the second list 
 # 4) if name in a second list found in the dictionary then push it to the dictionary.
-duplicate_dict = {}
-for name in names_1:
-    duplicate_dict[name] = True
-for name in names_2:
-    if name in duplicate_dict:
-        duplicates.append(name)
+# duplicate_dict = {}
+# for name in names_1:
+#     duplicate_dict[name] = True
+# for name in names_2:
+#     if name in duplicate_dict:
+#         duplicates.append(name)
 
+# bst = BST()
+# for name in names_1:
+#     bst.insert(name)
+# for name in names_2:
+#     if bst.contains(name):
+#         duplicates.append(name)    
 
 
 
@@ -46,11 +53,19 @@ for name in names_2:
 # What's the best time you can accomplish?  There are no restrictions on techniques or data
 # structures, but you may not import any additional libraries that you did not write yourself.
 
-# Stretch goal ----> 1.32744 seconds
-
+# Stretch goal 
+#Try3 ----> 1.32744 seconds
 # for name_1 in names_1:
 #     if name_1 in names_2:
 #         duplicates.append(name_1)
+
+#Try4 --> 0.01096963882446289 seconds
+duplicate_dict = {}
+for name in names_1:
+    duplicate_dict[name] = True
+for name in names_2:
+    if name in duplicate_dict:
+        duplicates.append(name)        
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")

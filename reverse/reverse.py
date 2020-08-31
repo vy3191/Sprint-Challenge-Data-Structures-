@@ -43,8 +43,23 @@ class LinkedList:
         return False
 
     def reverse_list(self, node, prev):
-        pass
+        # if there are no nodes in the Linked list then return None
+        if self.head is None:
+            return None
+        # if there is only one node in the Linked List return it
+        elif self.count == 1:    
+            return self.head.value
+        #if there are more than one node in the Linked List    
+        else:
+            current = self.head
+            while current:
+                next = current.next_node
+                current.next_node = prev
+                prev = current
+                current = next
+            self.head = prev    
 
+     
     def __repr__(self):
         current = self.head
         nodes = []

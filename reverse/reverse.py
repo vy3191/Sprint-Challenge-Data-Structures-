@@ -40,3 +40,30 @@ class LinkedList:
 
     def reverse_list(self, node, prev):
         pass
+
+    def __repr__(self):
+        current = self.head
+        nodes = []
+        while current:
+            if current == self.head:
+                nodes.append(f"[Head:{current.value}]")
+                current = current.next_node
+            elif current == self.tail:
+                nodes.append(f"[Tail:{current.value}]")
+                current = current.next_node
+            else:
+                nodes.append(f"[{current.value}]")
+                current = current.next_node 
+            return '-->'.join(nodes)
+
+bst = LinkedList(1)
+
+bst.insert(8)
+bst.insert(5)
+bst.insert(7)
+bst.insert(6)
+bst.insert(3)
+bst.insert(14)
+bst.insert(20)
+
+

@@ -51,10 +51,16 @@ class LinkedList:
             return self.head.value
         #if there are more than one node in the Linked List    
         else:
+            #Initialize prev = None(given), current=self.head, and next=None
+            next = None
             current = self.head
+            #Loop through the Linked List while current exists
             while current:
+                # grab the current.next value using next
                 next = current.next_node
+                # change next of current to pre which is default(None)
                 current.next_node = prev
+                # Move prev and current ahead by one step
                 prev = current
                 current = next
             self.head = prev    
